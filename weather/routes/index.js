@@ -4,7 +4,15 @@ var data=require('../config/data.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var da=data.add();
+  data.add(function(err,res){
+    if(err){
+      console.log("1");
+    }else{
+      //res.render('article', { all: results });
+      //res.render('login_in',{all:results});
+      console.log("123")
+    }
+  });
   //console.log(da);
   res.render('index', { title: 'Express' });
 });

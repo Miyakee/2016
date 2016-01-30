@@ -7,20 +7,20 @@ var cheerio = require('cheerio');
 var fs = require("fs") ;
 var eventproxy = require('eventproxy');
 var targetUrl = 'http://www.weather.com.cn/weather/101040100.shtml';
-function getdata() {
+function getdata(callback) {
   app.get('/', function (req, res) {
     request('http://www.weather.com.cn/weather/101040100.shtml', function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        //console.log(body);
-        $ = cheerio.load(body);
-        $('.c7d .clearfix ').each(function (idx, element) {
-          res.send($(this).text());
-
-        })
-      }else{
-        console.log('error !!!');
-
-      }
+      //if (!error && response.statusCode == 200) {
+      //  //console.log(body);
+      //  //$ = cheerio.load(body);
+      //  //$('.c7d .clearfix ').each(function (idx, element) {
+      //  //  res.send($(this).text());
+      //  //})
+      //}else{
+      //  console.log('error !!!');
+      //
+      //}
+      callback(error,response)
     })
   });
 
