@@ -12,16 +12,41 @@ app.get('/',function(req,res){
 if(!error&&response.statusCode==200){
     //console.log(body);
     $ = cheerio.load(body);
+    var arr=new Array();
+
+    $('.clearfix .sky ').each(function(i,ele){
     //res.json({
-    //    'date':$('.clearfix .sky').length
+    //    'date':$(this).value
     //});
-    //res.send($('.clearfix .sky').length);
+    //     arr +=i;
+        var date=$('h1',this).text();
+        //var date=$();
+        //console.log(text);
+        var status=$('.wea',this).text();
+        var tem=$('.tem',this).text();
+        var win=$('.win',this).text();
+        console.log(win);
 
-    $('.c7d .clearfix ').each(function(idx,element){
-        res.send($(this).text());
-        //res.send(element.value);
+        var obj={
+            date:date,
+            status:status,
+            tem:tem,
+            wind:win
+        }
+        arr.push(obj);
+    });
+    res.send(arr);
+    //res.send($('.clearfix .sky ').length);
 
-    })
+    //$('.c7d .clearfix h1 ').each(function(idx,element){
+    //    //res.send($(this).text());
+    //    var obj={
+    //        date:1
+    //    };
+    //    //res.send(obj);
+    //    //res.send(element.value);
+    //
+    //})
 }
     })
 });
