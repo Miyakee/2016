@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">  var es=new EventSource("http://localhost:3000/time");
+        es.onopen=function(){
+            console.log('connect success',this.readyState);
+        }
+        es.onmessage=function(event){
+            console.log('the data',event.data);
+        }
+        es.onerror=function(){}</script>
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+</head>
+<body>
+<p><%= some %></p>
+
+</body>
+</html>
