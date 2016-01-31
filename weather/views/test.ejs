@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+
     <title></title>
-    <script type="text/javascript">  var es=new EventSource("http://localhost:3000/time");
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript">
+    var es=new EventSource("http://localhost:3000/time");
         es.onopen=function(){
             console.log('connect success',this.readyState);
         }
-        es.onmessage=function(event){
-            console.log('the data',event.data);
+    var i=0;
+
+    es.onmessage=function(event){
+
+            if(event.data!=null){
+                if(i>10){
+                    $(".message ul li:last").remove();
+                }
+                $(".message ul ").prepend("<li>"+event.data+"</li>");
+//console.log($(".message ul ").length);
+//            console.log('the data',event.data);
+                i++;
+                            console.log(i);
+
+            }
         }
         es.onerror=function(){}</script>
     <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
 </head>
 <body>
-<p><%= some %></p>
-
+<p><%= message %></p>
+<div class="message" >
+    <ul>
+    </ul>
+</div>
 </body>
 </html>
