@@ -8,10 +8,11 @@ var fs = require("fs") ;
 var eventproxy = require('eventproxy');
 //var targetUrl = 'http://www.weather.com.cn/weather/101040100.shtml';
 function getdata(callback) {
-     request('http://top.baidu.com/', function a(error, response, body) {
+     request('http://forex.hexun.com/rmbhl/#zkRate', function a(error, response, body) {
       if (!error && response.statusCode == 200) {
         console.log(body);
         $ = cheerio.load(body);
+          //console.log($('.color tbody '));
 //    var    arr = new Array();
 //var  bb=123;
 //        $('#hot-list li').each(function (i, ele) {
