@@ -1,0 +1,27 @@
+.box{
+    float: left;
+    padding: 10px;
+    /*position: absolute;*/
+    -webkit-transition-duration: 500ms;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: ease-out;
+
+}
+.box:hover{
+    -webkit-transform:scale(1.4,1.4);
+z-index: 3;
+}
+.pic{
+    background-color: white;
+    border: 1px solid silver;
+    padding:10px;
+    box-shadow: 0 0 5px blue;
+}
+img{
+    width:170px;
+    height:auto;
+}
+#main{
+    margin:0 auto;
+    position:relative;
+}
