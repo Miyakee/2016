@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    Fangzi=function(keting,woshi,chufang){
+        this.keting=keting;
+        this.woshi=woshi;
+        this.chufang=chufang;
+    };
+    Baogongyou=function(){
+        this.jianfangzi=function(gongren){
+    gongren.jianketing();
+    gongren.jianwoshi();
+    gongren.jianchufang();
+}    };
+    Gongren=function(){
+        var keting,woshi,chufang;
+        this.jianketing=function(){
+            keting="客厅ok啦";
+            alert(keting);
+        };
+        this.jianwoshi=function(){
+            woshi="卧室ok啦";
+            alert(woshi);
+        };
+        this.jianchufang=function(){
+            chufang="厨房ok啦";
+            alert(chufang);
+        };
+        this.jiaogong=function(){
+        var _fangzi=new Fangzi(keting,woshi,chufang);
+        console.log(_fangzi);
+            return _fangzi;
+        }
+    };
+var gongren=new Gongren();
+    var bao=new Baogongyou();
+    bao.jianfangzi(gongren);
+    var my=gongren.jiaogong();
+console.log(my);
+</script>
+</body>
+</html>

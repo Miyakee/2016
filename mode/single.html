@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var c=(function(argument){
+        var lhome=function(message){
+            this.menling=message;
+        };
+        var men;
+
+        info={
+            sendmessage:function(message){
+                    if(!men){
+                      men=  new lhome(message);
+                    }
+                    return men;
+                }
+            };
+        return info;
+    })();
+
+    var l={
+        callc:function(msg){
+               var cc= c.sendmessage(msg);
+            alert(cc.menling);
+            cc=null;//释放内存
+        }
+    };
+    l.callc("like");
+</script>
+</body>
+</html>

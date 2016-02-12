@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    <!-- 简单工厂模式-->
+//    var gongchang={};
+//    gongchang.yifu=function(){
+//        alert("we produce cloth");
+//    };
+//    gongchang.xiezi=function(){
+//        alert("we produce shoes");
+//    };
+//    gongchang.changzhang=function(para){
+//        return new gongchang[para]();
+//    };
+////
+//    var me=gongchang.changzhang('yifu');
+//    console.log(me.yifu);
+
+//    抽象工厂模式
+    var gongchang={};
+//    gongchang.prototype= {
+//        yifu: function () {
+//            throw new Error("it is a abstract class");
+//        },
+//        xiezi: function () {
+//            alert("we produce shoes");
+//        },
+//        changzhang: function (para) {
+//            return new gongchang[para]();
+//        }
+//    };
+//gongchang.prototype.name=function(){
+//                alert("we produce shoes");
+//
+//};
+//    var xiaogongchang=function(){
+//        gongchang.call(this);
+//    };
+//    xiaogongchang.prototype=new gongchang();
+//    xiaogongchang.prototype.constructor=xiaogongchang;
+//    xiaogongchang.yifu=function(){
+//        alert("the clothes just can be product in my xiaogongchang");
+//    };
+//    xiaogongchang.xiaochangzhang=function(para){
+//        return new xiaogongchang[para]();
+//    };
+//    var you=xiaogongchang.xiaochangzhang.changzhang('xiezi');
+//var you=new xiaogongchang();
+//youue=you.changzhang('xiezi');
+//    console.log(you);
+//you.name();
+//
+var gongchang=function(){
+};
+gongchang.prototype={
+        yifu: function () {
+            throw new Error("it is a abstract class");
+        },
+        xiezi:function() {alert("we produce shoes")},
+        changzhang: function (para) {
+            return new gongchang[para]();
+        }
+};
+    var xiaogongchang=function(){
+        gongchang.call(this);
+    };
+xiaogongchang.prototype=new gongchang();
+    xiaogongchang.yifu=function(){
+        alert("the clothes just can be product in my xiaogongchang");
+    };
+    xiaogongchang.xiaochangzhang=function(para){
+        return new xiaogongchang[para]();
+    };
+var me=new xiaogongchang();
+    me.yifu();
+//var you =xiaogongchang.xiezi();
+</script>
+</body>
+</html>
