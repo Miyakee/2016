@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//var aa={
+//test:function(){
+//    console.log("test");
+//},
+//go:function(){
+//    console.log("go");
+//}};
+function bb(){
+    this.test=function(){
+        console.log("new test");
+    }
+
+}
+bb.prototype.gogo=function(){
+    console.log("new gogo");
+};
+function peishiqi() {
+    var s = new bb();
+    var aa = {
+        test: function () {
+            s.test();
+        },
+        go: function () {
+            s.gogo();
+        }
+    };
+    return aa;
+}
+var aa=new peishiqi();
+    aa.test();
+    aa.go();
+</script>
+</body>
+</html>

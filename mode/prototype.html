@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var myobj={
+        name:"miyakee",
+        age:25,
+        like:['eat','comic','draw','swim'],
+        obj_mine:{
+            brother:'lan',
+            sister:'yue',
+            friend:['zhu','zhen','meng']
+        }
+    };
+    //浅拷贝
+    function qian_clone(obj){
+        var newobj={},k;
+        for( k in obj){
+            newobj[k]=obj[k];
+        }
+        return newobj;
+    }
+//    var arr=qian_clone(myobj);
+//    arr.age=19;
+//    arr.obj_mine.brother="hu";
+
+    //深拷贝
+    function shen_clone(obj){
+        var newobj={}, k,b;
+        if((b=(obj instanceof Array))|| (obj instanceof Object) ){
+            newobj= b?[]:{};
+            for( k in obj){
+                if((obj[k] instanceof Array)|| (obj[k] instanceof Object))
+                {newobj[k]=shen_clone(obj[k]);}
+                else{
+                    newobj[k]=obj[k];
+                }
+            }
+        }
+
+        return newobj;
+    }
+//    var arr=shen_clone(myobj);
+//        arr.obj_mine.brother="hu";
+
+
+    //使用create
+//    function youobj(){};
+////    youobj.prototype=myobj;
+//    youobj.prototype.move=function(){
+//        console.log("kkk");
+//    };
+//    function result(){
+//    }
+//    result.prototype=Object.create(youobj.prototype);
+//    var _result=new result();
+//    console.log(arr);
+
+    //使用create直接深拷贝 看不到原来的结构，其他的都挂载到原型上
+    var a=Object.create(myobj);
+    a.age=22;
+    console.log(myobj);
+    console.log(a);
+
+</script>
+</body>
+</html>

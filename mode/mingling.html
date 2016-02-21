@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var lian={};
+    lian.bubin=function(num_bu){
+        alert("这里有"+num_bu+"个步兵");
+    }
+    lian.paobin=function(num_pao){
+        alert("这里有"+num_pao+"个步兵");
+    }
+    lian.lianzhang=function(mingling){
+        lian[mingling.type](mingling.num);
+    }
+    lian.lianzhang({
+        type:'paobin',
+        num:200
+    })
+    lian.lianzhang({
+        type:'bubin',
+        num:700
+    })
+</script>
+</body>
+</html>

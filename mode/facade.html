@@ -7,6 +7,25 @@
 <body>
 <script>
 //
+    var lianjie={
+
+    };
+
+    lianjie.username=function(){
+        alert("usernmae");
+    };
+    lianjie.password=function(){
+        alert("password");
+    };
+    lianjie.mysql=function(){
+        this.username();
+        this.password();
+    };
+    lianjie.connected=function(){
+        return this.mysql();
+    }
+//var aa=new lianjie();
+    lianjie.connected();
 </script>
 </body>
 </html>

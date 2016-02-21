@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" >
+    var arr=[1,2,3];
+    var diedai=(function(){
+         index=0;
+        var length=arr.length;
+        return {
+            hasNext:function(){
+                return index<length
+            },
+            Next:function(){
+                var data=arr[index];
+                index++;
+                return data;
+            },
+            reset:function(){
+                index=0;
+            }
+        }
+    })();
+    while(diedai.hasNext()){
+        console.log(diedai.Next());
+    }
+//    $.each(arr,function(index,val){
+//        console.log(index);
+//        console.log(val);
+//    })
+</script>
+</body>
+</html>

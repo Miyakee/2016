@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function liucheng(){};
+    liucheng.prototype.starting=function(){
+                console.log("开始游戏");
+            };
+    liucheng.prototype.loading=function(){
+                                console.log("游戏载入中");
+                            };
+    liucheng.prototype.end=function(){
+                console.log("游戏结束");
+            };
+    function play(){
+        console.log("俄罗斯方块");
+        liucheng.call(this);
+    }
+     play.prototype=new liucheng();
+     play.prototype.starting();
+</script>
+</body>
+</html>

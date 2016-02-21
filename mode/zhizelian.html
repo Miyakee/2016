@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function laoban(xmjl){
+        if(xmjl){
+            this.xmjl=xmjl;
+        }
+    }
+    laoban.prototype.write=function(xm){
+        this.xmjl.write(xm);
+    };
+    function xmjl(coder){
+        if(coder){
+            this.coder=coder;
+        }
+    }
+    xmjl.prototype.write=function(xm){
+        this.coder.write(xm)
+    };
+    function coder(xm){
+
+    }
+    coder.prototype.write=function(xm){
+        alert("coding"+xm);
+    }
+var k=new laoban(new xmjl(new coder()));
+    k.write("php");
+</script>
+</body>
+</html>

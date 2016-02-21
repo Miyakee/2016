@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="input" value="123"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    var a="123";
+    $input=$("#input").val();
+    //当验证a=11位电话号码时;
+    $.fn.val={
+        isEmpty:function(argument){
+            if(argument==null){
+                return false ;
+            }
+        },
+//        isTel:function(argument){
+//            if(argument.length==3)
+//            return true;
+//        }
+    };
+    $input.val()={
+        isEmpty:false,
+//        isTel:false
+    };
+    if(a==true){
+        alert("ok");
+    }
+</script>
+</body>
+</html>

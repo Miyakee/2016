@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    (function(){
+
+        var o=$({});
+         $.listen=function(){
+            o.on.apply(o,arguments);
+        };
+        $.fabu=function(){
+            o.trigger.apply(o,arguments);
+        };
+        $.qingchu=function(){
+            o.off.apply(o,arguments);
+        };
+        $.listen('../mode',function(e,a,b,c){
+            alert(a+"||"+b+"||"+c+"||");
+        });
+        $.listen('../mode',function(e,a,b,c){
+                    alert("ok");
+                })
+    }());
+        $.qingchu("../mode",[1,2,3]);
+
+
+</script>
+</body>
+</html>
