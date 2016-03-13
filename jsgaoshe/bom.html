@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+    /**{margin:0}*/
+    *{padding: 3px}
+     #k{
+         padding: 10px;
+         margin: 5px;
+         border: 2px solid saddlebrown;
+        height:400px;
+        width:400px;
+         background-color: #000088;
+    }
+</style>
+<body>
+<div id="k">shaah</div>
+<!--<iframeset rows="160,*" >-->
+    <!--<iframe id="k" src="../waterfall/jsWater.html" name="topFrame"/>-->
+    <!--<iframeset cols="50% 50%">-->
+        <!--<iframe src="https://www.baidu.com/" name="leftFrame"/>-->
+        <!--<iframe src="http://www.meituan.com/" name="rightFrame"/>-->
+    <!--</iframeset>-->
+
+<!--</iframeset>-->
+<script>
+    var out=window.outerWidth;
+    var inn=window.innerWidth;
+    var cli=k.clientWidth;
+    var off=k.offsetWidth;
+    var cliwin=document.documentElement.clientWidth;
+    var cliwin2=document.body.clientHeight;
+
+    console.log(out);
+    console.log(inn);
+    console.log(cli);
+    console.log(off);
+    console.log(cliwin);
+    console.log(cliwin2);
+//window.onload=window.open("www.baidu.com","_blank");\
+//    var qs=location.host;
+//    console.log(qs);
+    //以下会转跳但是没有后退
+//    window.location="http://www.baidu.com";
+//    location.href="http://www.baidu.com";
+//    location.assign("http://www.baidu.com");
+//    location.hostname="www.baidu.com";
+    //检测插件
+//    function hasPlugin(name){
+//        name=name.toLowerCase();
+//        for(var i=0;i<navigator.plugins.length;i++){
+//            if(navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
+//                return true;
+//            }
+//        }
+//        return false
+//    }
+//    alert(hasPlugin("flash"));
+</script>
+</body>
+</html>

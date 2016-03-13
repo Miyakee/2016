@@ -2,17 +2,19 @@
  * Created by Administrator on 2015/11/6.
  */
 window.onload=function(){
+    this.contentDocument.documentElement.scrollTop= 0;
     waterfall();
 };
 window.onscroll=function(){
-    var data={dataAll:[{"src":'20.jpg'},{"src":'21.jpg'},{"src":'22.jpg'},{"src":'23.jpg'},{"src":'24.jpg'},{"src":'25.jpg'},{"src":'26.jpg'},{"src":'27.jpg'},{"src":'28.jpg'},{"src":'29.jpg'},{"src":'30.jpg'},{"src":'31.jpg'},{"src":'32.jpg'},{"src":'33.jpg'},{"src":'34.jpg'}]};
-console.log(isLoad());
+    var data={dataAll:[{"src":'21.jpg'},{"src":'22.jpg'},{"src":'23.jpg'},{"src":'24.jpg'},{"src":'25.jpg'},{"src":'26.jpg'},{"src":'27.jpg'},{"src":'28.jpg'},{"src":'29.jpg'},{"src":'30.jpg'},{"src":'31.jpg'},{"src":'32.jpg'},{"src":'33.jpg'},{"src":'34.jpg'}]};
+    console.log(isLoad());
     if(isLoad()){
     var main = document.getElementById("main");
+    var    fragment = document.createDocumentFragment();
     for(var i=0;i<data.dataAll.length;i++) {
         var box = document.createElement("div");
         box.className = "box";
-        main.appendChild(box);
+        fragment.appendChild(box);
         var pic = document.createElement("div");
         pic.className = "pic";
         box.appendChild(pic);
@@ -20,6 +22,7 @@ console.log(isLoad());
         img.src="pic/"+data.dataAll[i].src;
         pic.appendChild(img);
     }
+        main.appendChild(fragment);
         waterfall();
 
 

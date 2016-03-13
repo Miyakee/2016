@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    var myMode=(function(){
+//        var my_name="miyakee";
+//        var my_hobby="picture";
+//        var my_age="21";
+//        var getName=(function(){
+//            console.log(my_name);
+//         })();
+//        var getAge=function(){
+//            console.log(my_age);
+//        }
+////        hisMode.getHobby=(function(){
+////            console.log(my_hobby);
+////        })();
+////
+//    })();
+//    var hisMode=(function(myMode){
+//        var my_hobby="23";
+//       myMode.getHobby=function(){
+//            console.log(my_hobby);
+//        };
+//        return myMode;
+//    })(hisMode||{});
+//hisMode.getHobby();
+//    myMode.getHobby();
+//    myMode.getHobby();
+//    console.log(my_name);
+//    if(1){
+//        var ss=123;
+//        function name(){
+//            alert(ss);
+//        }
+//    }
+//    name();
+function Parent()
+{
+this.sayHobby=function(){
+    console.log(this.hobby);
+}
+}
+
+Parent.prototype.sayAge=function()
+{
+    console.log(this.age);
+};
+function Child(firstname)
+{
+    this.fname=firstname;
+    this.age=40;
+    this.hobby="sing";
+    this.saySomeThing=function()
+    {
+        console.log(this.fname);
+        this.sayHobby();
+        this.sayAge();
+    }
+}
+
+Child.prototype=new  Parent();
+//var child=new Child("张");
+child=new Child("Z");
+//Parent.call(child);
+child.saySomeThing();
+</script>
+</body>
+</html>

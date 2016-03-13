@@ -1,0 +1,33 @@
+.box{
+    opacity: 0;
+    float: left;
+    padding: 10px;
+    transition: 500ms ease-out;
+    -moz-transition: 500ms ease-out;
+    -o-transition: 500ms ease-out;
+    -webkit-transition: 500ms ease-out;
+}
+.box:hover{
+    -webkit-transform:scale(1.4,1.4);
+    -ms-transform:scale(1.4,1.4);
+    -moz-transform:scale(1.4,1.4);
+    -o-transform:scale(1.4,1.4);
+    transform:scale(1.4,1.4);
+    z-index: 3;
+}
+
+.pic{
+    background-color: white;
+    border: 1px solid silver;
+    padding:10px;
+    box-shadow: 0 0 5px grey;
+}
+
+img{
+    width:200px;
+    height:auto;
+}
+#main{
+    margin:0 auto;
+    position:relative;
+}
